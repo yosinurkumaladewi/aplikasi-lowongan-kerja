@@ -7,6 +7,7 @@ class mdl extends CI_Model
   {
     return $this->db->get('user');
   }
+  		
   
   function register($data_user)
   {
@@ -19,7 +20,7 @@ class mdl extends CI_Model
   }
   public function pelamar()
   {
-  	
+
   	return $this->db->get('user');
   }
 

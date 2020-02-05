@@ -100,6 +100,13 @@
           <label for="confirm_password">Confirm Password:</label>
           <input type="password"  name="confirm_password"  placeholder="Confirm Password" class="login"/>
         </div> <!-- /field -->
+        <select>
+          <div class="">
+          <option value="2">perusahaan</option>
+          <option value="3">pelamar</option>
+
+          </div>
+        </select>
         
       </div> <!-- /login-fields -->
       

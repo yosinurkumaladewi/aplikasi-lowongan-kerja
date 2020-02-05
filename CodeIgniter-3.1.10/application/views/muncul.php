@@ -7,7 +7,7 @@ include 'template/header.php';
  	<title> </title>
  </head>
  <body>
- 	<div>			
+ 	<div>					
  	<table class="table table-bordered"> 
  		<tr> 
  			<td>daftar gratis</td>
