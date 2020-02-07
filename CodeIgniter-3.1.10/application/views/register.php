@@ -3,7 +3,7 @@
   
  <head>
     <meta charset="utf-8">
-    <title>REGISTER</title>
+    <title>REGISTRASI</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -12,7 +12,7 @@
 <link href="<?php echo base_url('admin_template/');?>css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
 
 <link href="<?php echo base_url('admin_template/');?>css/font-awesome.css" rel="stylesheet">
-    <link href="<?php echo base_url('admin_template/');?>http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
     
 <link href="<?php echo base_url('admin_template/');?>css/style.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url('admin_template/');?>css/pages/signin.css" rel="stylesheet" type="text/css">
@@ -23,24 +23,26 @@
   
   <div class="navbar navbar-fixed-top">
   
-  <div class="navbar-inner">
+<div class="navbar-inner">
     
-    <div class="container">
+   <!-- <div class="container">
       
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </a>
+      </a>-->
       
           <div class="account">
-        <div class="content clearfix">
-        <div class=""></div>
+        <div class="content clearfix"></div>
+
     
-        REGISTRASI      
-      </a>    
+        <a class="brand">
+      REGISTER jOB.SI        
+      </a>        
+          
       
-      <div class="nav-collapse">
+      <!--<div class="nav-collapse">
         <ul class="nav pull-right">
           <li class="">           
             <a href="<?php echo base_url('index.php/kontrol/login/');?>" class="">
@@ -73,11 +75,11 @@
     
     <form action="<?php echo base_url('index.php/kontrol/reg') ?>" method="post">
     
-      <h1>FORM REGISTRASI</h1>      
+      <h1>REGISTRASI</h1>      
       
       <div class="login-fields">
         
-        <p>Tolong Isi Data Registrasi Anda:</p>
+        <p>Tolong Isi Data Registrasi Anda Untuk Login</p>
         
         
         <div class="field">
@@ -100,13 +102,14 @@
           <label for="confirm_password">Confirm Password:</label>
           <input type="password"  name="confirm_password"  placeholder="Confirm Password" class="login"/>
         </div> <!-- /field -->
-        <select>
-          <div class="">
-          <option value="2">perusahaan</option>
-          <option value="3">pelamar</option>
 
-          </div>
-        </select>
+        <div class="field">
+          <label for="level">Pilih:</label>
+          <select name="level" class="login">
+            <option value="2">Perusahaan</option>
+            <option value="3">Pelamar</option>
+          </select>
+        </div>
         
       </div> <!-- /login-fields -->
       
@@ -130,7 +133,7 @@
 
 <!-- Text Under Box -->
 <div class="login-extra">
-  Already have an account? <a href="<?php echo base_url('admin_template/');?>login.html">Login to your account</a>
+  Sudah Memiliki Akun? <a href="<?php echo base_url('index.php/kontrol/login/');?>">Silakan klik Disini</a>
 </div> <!-- /login-extra -->
 
 

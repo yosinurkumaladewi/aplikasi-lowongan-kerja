@@ -37,12 +37,12 @@ class control extends CI_Controller
 						redirect(base_url('index.php/control/user/'));
 					}
 				}else{
-					echo "password error";
+					echo "password salah";
 				}
 				}
 
 			}else{
-				echo "username error";
+				echo "username salah";
 			}
 			
 		}

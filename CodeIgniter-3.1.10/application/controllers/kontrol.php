@@ -38,11 +38,12 @@
  	 	$username=$this->input->post('username');
  	 	$email=$this->input->post('email');
  	 	$password=md5($this->input->post('password'));
- 	 	//$level=$this->input->post('level');
+ 	 	$level=$this->input->post('level');
 
 
 
- 	 	$data_user = array('id_user' =>$id ,'username'=>$username,'email'=>$email,'password'=>$password	);
+
+ 	 	$data_user = array('id_user' =>$id ,'username'=>$username, 'level' => $level,'email'=>$email,'password'=>$password	);
  	 	//echo $id,$username,$email,$password;
  	 	$this->mdl->register($data_user);
  	 	

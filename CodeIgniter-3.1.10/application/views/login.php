@@ -33,18 +33,15 @@
 				<span class="icon-bar"></span>
 			</a>
 			
-			<a class="brand" href="index.html">
-			LOGIN jOB.SI				
-			</a>		
+			
 			
 			<div class="nav-collapse">
 				<ul class="nav pull-right">
 					
 					<li class="">						
-						<a href="<?php echo base_url('index.php/kontrol/register/');?>" class="">
-							REGISTER
-						</a>
-						
+						<a class="brand" href="<?php echo base_url('index.php/kontrol/register/') ?>	">
+			              REGISTRASI jOB.SI				
+			</a>	
 					</li>
 					
 					<!--<li class="">						
@@ -72,11 +69,11 @@
 		
 		<form action="<?php echo base_url('index.php/control/login/') ?>" method="post">
 		
-			<h1>Form Login</h1>		
+			<h1>Login</h1>		
 			
 			<div class="login-fields">
 				
-				<p>Tolong isi form login ini!!</p>
+				<p>Tolong Registrasi Terlebih Dahulu Sebelum Login.</p>
 				
 				<div class="field">
 					<label for="username">Username</label>

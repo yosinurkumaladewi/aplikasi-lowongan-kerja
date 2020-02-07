@@ -55,11 +55,11 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="<?php  echo base_url('admin_template/');?>index.html " ><i class="icon-dashboard"></i><span>Home</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>reports.html  "><i class="icon-list-alt"></i><span>Cari Lowongan</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>guidely.html "><i class="icon-facetime-video"></i><span>Pasang Lowongan </span> </a></li>
-        <li><a href="<?php  echo base_url('admin_template/');?>charts.html "><i class="icon-bar-chart"></i><span>tentang</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>shortcodes.html "><i class="icon-code"></i><span>contact</span> </a> </li>
+        <li class="active"><a href="<?php  echo base_url('admin_template/');?>index.html " ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
+        <li><a href="<?php  echo base_url('admin_template/');?>reports.html  "><i class="icon-bar icon-search"></i><span>Cari Lowongan</span> </a> </li>
+        <li><a href="<?php  echo base_url('admin_template/');?>guidely.html "><i class="icon-bar icon-legal"></i><span>Pasang Lowongan </span> </a></li>
+        <li><a href="<?php  echo base_url('admin_template/');?>charts.html "><i class="icon-bar icon-question-sign"></i><span>tentang</span> </a> </li>
+        <li><a href="<?php  echo base_url('admin_template/');?>shortcodes.html "><i class="icon-bar icon-user"></i><span>contact</span> </a> </li>
     
       </ul>
     </div>

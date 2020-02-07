@@ -1,6 +1,6 @@
 <?php  
 
-class Phpmailer_library
+class Phpmailer_lib
 {
     public function __construct()
     {
@@ -9,10 +9,11 @@ class Phpmailer_library
 
     public function load()
     {
+        require_once APPPATH.'third_party/PHPMailer/Exception.php';
         require_once(APPPATH.'third_party/PHPmailer/src/PHPMailer.php');
         require_once(APPPATH.'third_party/PHPmailer/src/SMTP.php');
-        $objMail = new PHPMailer\PHPMailer\PHPMailer();
-        return $objMail;
+        $mail = new PHPMailer();
+        return $mail;
     }
 }
 
