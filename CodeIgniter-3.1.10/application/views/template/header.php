@@ -32,7 +32,7 @@
               <li><a href="<?php // echo base_url('admin_template/');?>javascript:;">Help</a></li>
             </ul>
           </li>-->
-          <li class="dropdown"><a href="<?php  echo base_url('admin_template/');?> " class="dropdown-toggle" data-toggle="dropdown"><i
+          <li class="dropdown"><a href="<?php  echo base_url('index.php/kontrol/login');?> " class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-user"></i> LOGIN</a>
             <!--<ul class="dropdown-menu">
               <li><a href="<?php  //echo base_url('admin_template/');?>javascript:;">Profile</a></li>
@@ -56,9 +56,9 @@
     <div class="container">
       <ul class="mainnav">
         <li class="active"><a href="<?php  echo base_url('admin_template/');?>index.html " ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>reports.html  "><i class="icon-bar icon-search"></i><span>Cari Lowongan</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>guidely.html "><i class="icon-bar icon-legal"></i><span>Pasang Lowongan </span> </a></li>
-        <li><a href="<?php  echo base_url('admin_template/');?>charts.html "><i class="icon-bar icon-question-sign"></i><span>tentang</span> </a> </li>
+        <li><a href="<?php  echo base_url('admin_template/');?>reports.html  "><i class="icon-bar icon-search"></i><span>data pelamar</span> </a> </li>
+        <li><a href="<?php  echo base_url('admin_template/');?>guidely.html "><i class="icon-bar icon-legal"></i><span>data perusaaan </span> </a></li>
+        <li><a href="<?php  echo base_url('admin_template/');?>charts.html "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
         <li><a href="<?php  echo base_url('admin_template/');?>shortcodes.html "><i class="icon-bar icon-user"></i><span>contact</span> </a> </li>
     
       </ul>

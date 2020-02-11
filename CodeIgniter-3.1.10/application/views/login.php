@@ -48,8 +48,7 @@
 						<a href="<?php echo base_url('index.php/kontrol/awal/');?>" class="">
 							<i class="icon-chevron-left"></i>
 							Back to Homepage
-						</a>
-						
+						</a>			
 					</li>-->
 				</ul>
 				

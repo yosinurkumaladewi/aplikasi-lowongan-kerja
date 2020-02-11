@@ -23,6 +23,17 @@ class mdl extends CI_Model
 
   	return $this->db->get('user');
   }
+  function get_sgl_details()
+  {
+    return array(
+      'user'=>'root',
+      'pass'=>'',
+      'db'=>'lowongan_kerja',
+      'host'=>'localhost'
+
+    );
+    
+  }
 
 } 
 ?>
