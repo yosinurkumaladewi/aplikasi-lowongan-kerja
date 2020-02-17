@@ -24,7 +24,7 @@
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php  echo base_url('admin_template/'); ?> index.php">jasa pencarian lowongan kerja </a>
       <div class="nav-collapse">
         
-        <ul class="nav pull-right">
+       <!-- <ul class="nav pull-right">
           <li class="dropdown"><a href="<?php echo base_url('index.php/kontrol/register');?>" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-cog"></i> Register</a>
             <!--<ul class="dropdown-menu">
@@ -55,11 +55,11 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="<?php  echo base_url('admin_template/');?>index.html " ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>reports.html  "><i class="icon-bar icon-search"></i><span>data pelamar</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>guidely.html "><i class="icon-bar icon-legal"></i><span>data perusaaan </span> </a></li>
-        <li><a href="<?php  echo base_url('admin_template/');?>charts.html "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>shortcodes.html "><i class="icon-bar icon-user"></i><span>contact</span> </a> </li>
+        <li class="active"><a href="" ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
+        <li><a href=" "><i class="icon-bar icon-search"></i><span>data pelamar</span> </a> </li>
+        <li><a href=" "><i class="icon-bar icon-legal"></i><span>data perusaaan </span> </a></li>
+        <li><a href=" "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
+        <li><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-user"></i><span>contact</span> </a> </li>
     
       </ul>
     </div>

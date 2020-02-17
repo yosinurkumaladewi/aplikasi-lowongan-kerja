@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -55,10 +55,11 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="<?php  echo base_url('admin_template/');?>index.html " ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>reports.html  "><i class="icon-bar icon-search"></i><span>jenis lowongan</span> </a> </li>
-        <li><a href="<?php  echo base_url('admin_template/');?>guidely.html "><i class="icon-bar icon-legal"></i><span>data Lowongan </span> </a></li>
-        <li><a href="<?php  echo base_url('admin_template/');?>charts.html "><i class="icon-bar icon-question-sign"></i><span>profi</span> </a> </li>
+        <li class="active"><a href=" " ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
+        <li><a href=""><i class="icon-bar icon-search"></i><span>jenis lowongan</span> </a> </li>
+        <li><a href=" "><i class="icon-bar icon-legal"></i><span>data Lowongan </span> </a></li>
+        <li><a href=" "><i class="icon-bar icon-question-sign"></i><span>profi</span> </a> </li>
+        <li><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-question-sign"></i><span>contact</span> </a> </li>
            
       </ul>
     </div>

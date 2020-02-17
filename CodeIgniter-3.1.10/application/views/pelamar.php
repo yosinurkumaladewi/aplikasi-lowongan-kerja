@@ -68,12 +68,23 @@
             <li><a href="">perbankan</a></li>
 
             
-          </ul
-
-          >
+          </ul>
         </li>
       
         <li><a href=" "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
+        
+    
+             
+
+      
+        <li><a href=" "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
+        
+  
+      
+        <li><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-question-sign"></i><span>contact</span> </a> </li>
+        
+    
+      </ul>
         
     
       </ul>

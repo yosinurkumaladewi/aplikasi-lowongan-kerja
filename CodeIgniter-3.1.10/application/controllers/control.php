@@ -14,7 +14,7 @@ class control extends CI_Controller
 	function index()
 	{
 		//$this->load->view('login');
-		$this->load->view('pelamar');
+		$this->load->view('muncul');
 
 	 }
 	 function login()
@@ -91,7 +91,7 @@ class control extends CI_Controller
 				array( 'db'=>'email','dt'=>4,
 				//'formatter'=>function($d,$row){
 					//return date('d-m-y ] H:i:s',strtotime($d));
-				} 
+				 
 
 				 ),
 				array('db'=>'id_user','dt'=>5,
@@ -105,7 +105,7 @@ class control extends CI_Controller
 
 
 					}
-				}
+				
 
 			)
 
@@ -115,6 +115,10 @@ class control extends CI_Controller
 			require 'CodeIgniter-3.1.10/DataTables/ssp.class.php';
 			echo json_encode(
 				SSP::simple($_GET,$sql_details,$table,$primarykey,$columns));
+		}
+		function contact()
+		{
+			$this->load->view('kontak');
 		}
 
 }
