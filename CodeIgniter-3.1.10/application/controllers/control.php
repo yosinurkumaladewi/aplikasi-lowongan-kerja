@@ -8,7 +8,7 @@ class control extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('mdl');
+		// $this->load->model('mdl');
 		
 	}
 	function index()
@@ -80,9 +80,9 @@ class control extends CI_Controller
 							return "<small class ='label bg-green'>AVAILABLE</small>";
 							}elseif ($d == "0"){
 								return "<small class ='label bg-green'>NONAVAILABLE</small>";
-							}else{
-								return "<small class='label'>LAINNYA</small>";
-							}
+							}//else{
+								//return "<small class='label'>LAINNYA</small>";
+							//}
 					}
 
 			),
@@ -112,9 +112,10 @@ class control extends CI_Controller
 
 
 			);
-			require 'CodeIgniter-3.1.10/DataTables/ssp.class.php';
+			require 'DataTables/ssp.class.php';
 			echo json_encode(
-				SSP::simple($_GET,$sql_details,$table,$primarykey,$columns));
+				SSP::simple($_GET,$sql_details,$table,$primarykey,$columns)
+			);
 		}
 		function contact()
 		{

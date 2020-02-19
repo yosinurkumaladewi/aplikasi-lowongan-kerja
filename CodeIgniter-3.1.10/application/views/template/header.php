@@ -7,6 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="<?php  echo base_url('admin_template/'); ?>css/bootstrap.min.css" rel="stylesheet">
 <link href="<?php  echo base_url('admin_template/'); ?>css/bootstrap-responsive.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('DataTables/media/css/'); ?>jquery.dataTables.min.css ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('DataTables/media/css/'); ?>dataTables.bootstrap.min.css ?>">
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
         rel="stylesheet">
 <link href="<?php  echo base_url('admin_template/'); ?>css/font-awesome.css" rel="stylesheet">
@@ -21,7 +23,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php  echo base_url('admin_template/'); ?> index.php">jasa pencarian lowongan kerja </a>
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="">jOB.SI </a>
       <div class="nav-collapse">
         
        <!-- <ul class="nav pull-right">

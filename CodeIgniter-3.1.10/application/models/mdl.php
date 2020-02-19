@@ -23,14 +23,13 @@
 
   	return $this->db->get('user');
   }
-  function get_sgl_details()
+  function get_sql_details()
   {
     return array(
       'user'=>'root',
       'pass'=>'',
       'db'=>'lowongan_kerja',
       'host'=>'localhost'
-
     );
     
   }
