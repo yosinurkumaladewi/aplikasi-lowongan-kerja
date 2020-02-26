@@ -57,8 +57,8 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="" ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
-        <li><a href=" "><i class="icon-bar icon-search"></i><span>data pelamar</span> </a> </li>
+        <li class="active"><a href="<?php echo base_url('index.php/control/index/') ?>" ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
+        <li><a href="<?php echo base_url('index.php/control/plmar') ?> "><i class="icon-bar icon-search"></i><span>data pelamar</span> </a> </li>
         <li><a href=" "><i class="icon-bar icon-legal"></i><span>data perusaaan </span> </a></li>
         <li><a href=" "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
         <li><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-user"></i><span>contact</span> </a> </li>

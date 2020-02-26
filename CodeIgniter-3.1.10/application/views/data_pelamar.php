@@ -1,7 +1,5 @@
-<?php 
-include 'template/header.php';
- ?>
- 	<div class="table-responsive">
+<?php include 'template/header.php'; ?>
+<div class="table-responsive">
  
     					
  	<table class="table table-condensed table-hovered table-stiped table-bordered dt-responsive display nowrap" 
@@ -9,11 +7,22 @@ include 'template/header.php';
  		<thead>
  			<tr>
  				<th>#</th>
- 				<th>username <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>level<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>password <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>email <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>aksi <br></th>
+ 				<th>nama <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>alamat<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>jenis_kelamin <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>no_ktp<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>scan_ktp<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>skck<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>pasfoto<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>ijasah<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>kartu_keluarga<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>id_user<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>email<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>no_hp<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>tgl_lahir<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>sertifikat<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+ 				<th>profil<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+
  			</tr>
  		</thead>
  		<tbody id="show_data">
@@ -41,23 +50,23 @@ include 'template/header.php';
  		 		"iTotalPages"		:Math.ceil(oSettings.fnRecordsDisplay()/oSettings._iDisplayLenght)
  		 	}
  		 };
- 		table = $('#tbl_user').DataTable({
+ 		table = $('#tbl_data_lowongan').DataTable({
  			"processing" : true,
  			"serverSide" : true,
  			"searching"  : true,
  			"pagingType" : 'full_numbers',
- 			"dom"        : 'Bfrtip',
- 			 "Buttons"    : [
- 			 {"extend" : 'excel' , "className" : 'btn btn-success btn-flat'},
- 			 {"extend" : 'pdf' , "className" : 'btn btn-danger  btn btn-flat'},
- 			 {"extend" :'pageLenght' , "className" : 'btn btn-default btn-flat'}
- 			 ],
+ 			// "dom"        : 'Bfrtip',
+ 			// "Buttons"    : [
+ 			// {"extend" : 'excel' , "className" : 'btn btn-success btn-flat'},
+ 			// {"extend" : 'pdf' , "className" : 'btn btn-danger  btn btn-flat'},
+ 			// {"extend" :'pageLenght' , "className" : 'btn btn-default btn-flat'}
+ 			// ],
  			"lengthMenu" : [
  				[100,150,200,300,-1],
  				['100 Rows','150 Rows','200 Rows','300 Rows','All']
  			],
  			"ajax" : {
- 				"url" : "<?php echo site_url('index.php/control/ssp_unit'); ?>",
+ 				"url" : "<?php echo site_url('index.php/control/ssp_pelamar'); ?>",
  				"type" : "POST"
  			},
  			"order" : [[1,'asc']],

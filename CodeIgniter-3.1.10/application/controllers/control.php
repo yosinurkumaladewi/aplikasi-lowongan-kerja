@@ -74,23 +74,23 @@ class control extends CI_Controller
 			$primarykey = 'id_user';
 			$columns = array(
 				array ('db'=>'id_user','dt'=>0),
-				array ('db'=>'level','dt'=>1,
-					'formatter'=> function($d,$row){
-						if($d == "1"){
-							return "<small class ='label bg-green'>AVAILABLE</small>";
-							}elseif ($d == "0"){
-								return "<small class ='label bg-green'>NONAVAILABLE</small>";
-							}//else{
+			     array ('db'=>'username','dt'=>1,
+					//'formatter'=> function($d,$row){
+						//if($d == "1"){
+							//return "<small class ='label bg-green'>AVAILABLE</small>";
+							//}//elseif ($d == "0"){
+								//return "<small class ='label bg-green'>NONAVAILABLE</small>";
+							//}//else{
 								//return "<small class='label'>LAINNYA</small>";
-							//}
-					}
+							// }
+					//}
 
 			),
-				array( 'db'=>'username','dt'=>2),
+				array( 'db'=>'level','dt'=>2),
 				array( 'db'=>'password','dt'=>3),
 				array( 'db'=>'email','dt'=>4,
 				//'formatter'=>function($d,$row){
-					//return date('d-m-y ] H:i:s',strtotime($d));
+					//return date('d-m-y ] H:i:s',strtotime($d0);}
 				 
 
 				 ),
@@ -120,6 +120,73 @@ class control extends CI_Controller
 		function contact()
 		{
 			$this->load->view('kontak');
+		}
+		public function ssp_pelamar()
+		{
+			$sql_details = $this->mdl->get_sql_details();
+
+			$table = 'data_pelamar';
+			$primarykey = 'id_pelamar';
+			$columns = array(
+				array ('db'=>'id_pelamar','dt'=>0),
+				array ('db'=>'nama','dt'=>1,
+					'formatter'=> function($d,$row){
+						if($d == "1"){
+							return "<small class ='label bg-green'>AVAILABLE</small>";
+							}//elseif ($d == "0"){
+								//return "<small class ='label bg-green'>NONAVAILABLE</small>";
+							//}//else{
+								//return "<small class='label'>LAINNYA</small>";
+							//}
+					}
+
+			),
+				array( 'db'=>'alamat','dt'=>2),
+				array( 'db'=>'jenis_kelamin','dt'=>3),
+				array( 'db'=>'no_ktp','dt'=>4),
+				array( 'db'=>'scan_ktp','dt'=>5),
+				array( 'db'=>'skck','dt'=>6),
+				array( 'db'=>'pasfoto','dt'=>7),
+				array( 'db'=>'ijasah','dt'=>8),
+				array( 'db'=>'kartu_keluarga','dt'=>9),
+				array( 'db'=>'id_user','dt'=>10),
+				array( 'db'=>'email','dt'=>11),
+				array( 'db'=>'no_hp','dt'=>12),
+				array( 'db'=>'tgl_lahir','dt'=>13),
+				array( 'db'=>'sertifikat','dt'=>14),
+				array( 'db'=>'profil','dt'=>15,
+				//'formatter'=>function($d,$row){
+					//return date('d-m-y ] H:i:s',strtotime($d));
+				 
+
+				 ),
+				array('db'=>'id_pelamar','dt'=>5,
+					'formatter'=>function($d,$row){
+						return '<a href="javascript:void(0);"class"detail_record btn btn-success btn-xs btn-flat"
+						title="DETAIL" data-id_pelamar="'.$d.'"><i class="fa fa-search"></i></a>
+							<a href="javascript:void(0);" class="edit_record btn btn-warning btn-xs btn-flat"
+						title="EDIT" data-id_pelamar="'.$d.'"><i class="fa fa-edit"></i></a>
+							<a href="javascript:void(0);" class="edit_record btn btn-danger btn-xs btn-flat"
+							title="HAPUS" data-id_pelamar="'.$d.'"><i class="fa fa-trash"></i></a>';
+
+
+					}
+				
+
+			)
+
+
+
+			);
+			require 'DataTables/ssp.class.php';
+			echo json_encode(
+				SSP::simple($_GET,$sql_details,$table,$primarykey,$columns)
+			);
+		}
+		function plmar()
+		{
+			//$data['data_pelamar']=$this->mdl->get_data_pelamar()->result()
+			$this->load->view('data_pelamar');
 		}
 
 }
