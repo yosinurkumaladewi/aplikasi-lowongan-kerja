@@ -57,11 +57,11 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <li class="active"><a href="<?php echo base_url('index.php/control/index/') ?>" ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
-        <li><a href="<?php echo base_url('index.php/control/plmar') ?> "><i class="icon-bar icon-search"></i><span>data pelamar</span> </a> </li>
-        <li><a href=" "><i class="icon-bar icon-legal"></i><span>data perusaaan </span> </a></li>
-        <li><a href=" "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
-        <li><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-user"></i><span>contact</span> </a> </li>
+        <li <?php if($this->uri->segment(2) == 'home'){echo "class='active'";}else{} ?>><a href="<?php echo base_url('index.php/control/home/') ?>" ><i class="icon-bar icon-home"></i><span>Home</span> </a> </li>
+        <li <?php if($this->uri->segment(2) == 'plmar'){echo "class='active'";}else{} ?>><a href="<?php echo base_url('index.php/control/plmar') ?> "><i class="icon-bar icon-search"></i><span>data pelamar</span> </a> </li>
+        <li <?php if($this->uri->segment(2) == 'show_perusahaan'){echo "class='active'";}else{} ?>><a href="<?php echo base_url('index.php/control/show_perusahaan') ?>"><i class="icon-bar icon-legal"></i><span>data perusaaan </span> </a></li>
+        <li <?php if($this->uri->segment(2) == ''){echo "class='active'";}else{} ?>><a href=" "><i class="icon-bar icon-question-sign"></i><span>profil</span> </a> </li>
+        <li <?php if($this->uri->segment(2) == 'contact'){echo "class='active'";}else{} ?>><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-user"></i><span>contact</span> </a> </li>
     
       </ul>
     </div>

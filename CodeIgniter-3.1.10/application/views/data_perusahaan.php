@@ -1,30 +1,27 @@
 <?php include 'template/header.php'; ?>
 <div class="table-responsive">
- 
-    					
  	<table class="table table-condensed table-hovered table-stiped table-bordered dt-responsive display nowrap" 
  	id="tbl_user" >
+ 	
  		<thead>
  			<tr>
  				<th>#</th>
- 				<th>nama <br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;" ></th>
- 				<th>alamat<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;" ></th>
- 				<th>jenis_kelamin<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;" ></th>
- 								
- 				<th>id_user<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;" ></th>
- 				<th>email<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;"></th>
- 				<th>no_hp<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;" ></th>
- 								
+ 				<th>nama <br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;"></th>
+ 				<th>alamat<br><input type="text" class="form-control input-sm" placeholder="SEARCH"   style="width: 120px;"></th>
+ 				<th>jenis_lowongan <br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;" ></th>
+ 				<th>no_hp<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;"></th>
+ 				<th>email<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;" ></th>
+ 				<th>id_user<br><input type="text" class="form-control input-sm" placeholder="SEARCH"  style="width: 120px;"></th>
  				<th>aksi <br></th>
 
  			</tr>
  		</thead>
+
  		<tbody id="show_data">
  			
  		</tbody>	
  	</table> 
  	</div>
-           
            <?php include 'template/footer.php'; ?>
 
 
@@ -44,7 +41,7 @@
  		 		"iTotalPages"		:Math.ceil(oSettings.fnRecordsDisplay()/oSettings._iDisplayLenght)
  		 	}
  		 };
- 		table = $('#tbl_data_lowongan').DataTable({
+ 		table = $('#tbl_user').DataTable({
  			"processing" : true,
  			"serverSide" : true,
  			"searching"  : true,
@@ -60,7 +57,7 @@
  				['100 Rows','150 Rows','200 Rows','300 Rows','All']
  			],
  			"ajax" : {
- 				"url" : "<?php echo site_url('index.php/control/ssp_pelamar'); ?>",
+ 				"url" : "<?php echo site_url('index.php/control/ssp_perusahaan'); ?>",
  				"type" : "POST"
  			},
  			"order" : [[1,'asc']],

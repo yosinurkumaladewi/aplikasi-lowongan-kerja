@@ -117,6 +117,11 @@ class control extends CI_Controller
 				SSP::simple($_GET,$sql_details,$table,$primarykey,$columns)
 			);
 		}
+
+		public function home()
+		{
+			$this->load->view('muncul');
+		}
 		function contact()
 		{
 			$this->load->view('kontak');
@@ -130,37 +135,30 @@ class control extends CI_Controller
 			$columns = array(
 				array ('db'=>'id_pelamar','dt'=>0),
 				array ('db'=>'nama','dt'=>1,
-					'formatter'=> function($d,$row){
-						if($d == "1"){
-							return "<small class ='label bg-green'>AVAILABLE</small>";
-							}//elseif ($d == "0"){
+					//'formatter'=> function($d,$row){
+						//if($d == "1"){
+							//return "<small class ='label bg-green'>AVAILABLE</small>";
+							//}//elseif ($d == "0"){
 								//return "<small class ='label bg-green'>NONAVAILABLE</small>";
 							//}//else{
 								//return "<small class='label'>LAINNYA</small>";
 							//}
-					}
+					//}
 
 			),
 				array( 'db'=>'alamat','dt'=>2),
 				array( 'db'=>'jenis_kelamin','dt'=>3),
-				array( 'db'=>'no_ktp','dt'=>4),
-				array( 'db'=>'scan_ktp','dt'=>5),
-				array( 'db'=>'skck','dt'=>6),
-				array( 'db'=>'pasfoto','dt'=>7),
-				array( 'db'=>'ijasah','dt'=>8),
-				array( 'db'=>'kartu_keluarga','dt'=>9),
-				array( 'db'=>'id_user','dt'=>10),
-				array( 'db'=>'email','dt'=>11),
-				array( 'db'=>'no_hp','dt'=>12),
-				array( 'db'=>'tgl_lahir','dt'=>13),
-				array( 'db'=>'sertifikat','dt'=>14),
-				array( 'db'=>'profil','dt'=>15,
+				
+				array( 'db'=>'id_user','dt'=>4),
+				array( 'db'=>'email','dt'=>5),
+				array( 'db'=>'no_hp','dt'=>6),
+				
 				//'formatter'=>function($d,$row){
 					//return date('d-m-y ] H:i:s',strtotime($d));
 				 
 
-				 ),
-				array('db'=>'id_pelamar','dt'=>5,
+				 
+				array('db'=>'id_pelamar','dt'=>7,
 					'formatter'=>function($d,$row){
 						return '<a href="javascript:void(0);"class"detail_record btn btn-success btn-xs btn-flat"
 						title="DETAIL" data-id_pelamar="'.$d.'"><i class="fa fa-search"></i></a>
@@ -187,6 +185,65 @@ class control extends CI_Controller
 		{
 			//$data['data_pelamar']=$this->mdl->get_data_pelamar()->result()
 			$this->load->view('data_pelamar');
+		}
+		public function ssp_perusahaan()
+		{
+			$sql_details = $this->mdl->get_sql_details();
+
+			$table = 'data_perusahaan';
+			$primarykey = 'id_perusahaan';
+			$columns = array(
+				array ('db'=>'id_perusahaan','dt'=>0),
+				array ('db'=>'nama','dt'=>1,
+					//'formatter'=> function($d,$row){
+						//if($d == "1"){
+							//return "<small class ='label bg-green'>AVAILABLE</small>";
+							//}//elseif ($d == "0"){
+								//return "<small class ='label bg-green'>NONAVAILABLE</small>";
+							//}//else{
+								//return "<small class='label'>LAINNYA</small>";
+							//}
+					//}
+
+			),
+				array( 'db'=>'alamat','dt'=>2),
+				array( 'db'=>'jenis_lowongan','dt'=>3),
+				array( 'db'=>'no_hp','dt'=>4),
+			
+				array( 'db'=>'email','dt'=>5),
+			
+				array( 'db'=>'id_user','dt'=>6),
+				//'formatter'=>function($d,$row){
+					//return date('d-m-y ] H:i:s',strtotime($d));
+				 
+
+			
+				array('db'=>'id_perusahaan','dt'=>7,
+					'formatter'=>function($d,$row){
+						return '<a href="javascript:void(0);"class"detail_record btn btn-success btn-xs btn-flat"
+						title="DETAIL" data-id_perusahaan="'.$d.'"><i class="fa fa-search"></i></a>
+							<a href="javascript:void(0);" class="edit_record btn btn-warning btn-xs btn-flat"
+						title="EDIT" data-id_perusahaan="'.$d.'"><i class="fa fa-edit"></i></a>
+							<a href="javascript:void(0);" class="edit_record btn btn-danger btn-xs btn-flat"
+							title="HAPUS" data-id_perusahaan="'.$d.'"><i class="fa fa-trash"></i></a>';
+
+
+					}
+				
+
+			)
+
+
+
+			);
+			require 'DataTables/ssp.class.php';
+			echo json_encode(
+				SSP::simple($_GET,$sql_details,$table,$primarykey,$columns)
+			);
+		}
+		public function show_perusahaan()
+		{
+			$this->load->view('data_perusahaan');
 		}
 
 }

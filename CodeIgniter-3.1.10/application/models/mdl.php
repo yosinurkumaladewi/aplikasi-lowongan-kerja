@@ -32,7 +32,15 @@
       'host'=>'localhost'
     );
     
-    
+  }
+  public function lowongan()
+  {
+    return $this->db->get('data_lowongan');
+  }
+
+  public function perusahaan()
+  {
+    return $this->db->get('data_perusahaan');
   }
   
 
