@@ -44,7 +44,7 @@
  		 		"iTotalPages"		:Math.ceil(oSettings.fnRecordsDisplay()/oSettings._iDisplayLenght)
  		 	}
  		 };
- 		table = $('#tbl_data_lowongan').DataTable({
+ 		table = $('#tbl_user ').DataTable({
  			"processing" : true,
  			"serverSide" : true,
  			"searching"  : true,
@@ -68,23 +68,23 @@
  				"targets":[ -1 ],
  				"orderable" : false
  			}]
- 			// ,
- 			// "rowCallback" :  function(row,data,iDisplayIndex){
- 			// 	var info = this.fnPagingInfo();
- 			// 	var page = info.iPage;
- 			// 	var length = info.iLenght;
- 			// 	var index = page * length + (iDisplayIndex + 1);
- 			// 	$('td:eq(0)' , row).html(index);
- 			// }
+ 			 ,
+ 			 "rowCallback" :  function(row,data,iDisplayIndex){
+ 			 	var info = this.fnPagingInfo();
+ 			 	var page = info.iPage;
+ 			 	var length = info.iLenght;
+ 			 	var index = page * length + (iDisplayIndex + 1);
+ 			 	$('td:eq(0)' , row).html(index);
+ 			 }
  		});
- 		// table.columns().every(function(){
- 		// 	var table = this;
- 		// 	$('input' , this.header()).on('keyup change',function(){
- 		// 		if (table.search() !== this.value){
- 		// 			table.search(this.value).draw();
- 		// 		}
- 		// 	});
- 		// });
+ 		 table.columns().every(function(){
+ 		 	var table = this;
+ 		 	$('input' , this.header()).on('keyup change',function(){
+ 		 		if (table.search() !== this.value){
+ 		 			table.search(this.value).draw();
+ 		 		}
+ 		 	});
+ 		 });
 
  		// $('#tbl_user').on('click', '.edit_record',function(){
  		// 	var id_user = $(this).data('id_user');

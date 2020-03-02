@@ -42,7 +42,7 @@
   {
     return $this->db->get('data_perusahaan');
   }
-  
+ 
 
 } 
 ?>

@@ -83,6 +83,41 @@
  		}
 
  	 }
+ 	 public function edit()
+ 	 {
+ 	 	$id_user = $this->input->post('id_user');
+ 	 	$username = $this->input->post('username');
+ 	 	$level = $this->input->post('level');
+ 	 	$password = $this->input->post('password');
+ 	 	$email = $this->input->post('email');
+
+ 	 	$data = array(
+ 	 		'username' => $username,
+ 	 		'level'=>$level,
+ 	 		'password'=>$password,
+ 	 		'email' =>$email);
+
+ 	 	$where = array('id_user' => $id_user);
+
+ 	 	$this->mdl_petugas->edit_data($data,$where);
+ 	 	$this->session->set_flashdata('pesan','berhasil di edit');
+ 	 	redirect(base_url('kontrol/data'));
+
+
+ 	 }
+ 	 public function hapus()
+ 	 {
+ 	 	$id =$this->uri->segment(3);
+ 	 	$where = array('id_user'=>$id);
+ 	 	$this->mdl_petugas->hapus_data('user',$where);
+ 	 	$this->session->set_flashdata('pesan','berhasil di hapus');
+ 	 	redirect(base_url('kontrol/data'));
+ 	 }
+ 	 public function data()
+ 	 {
+ 	 	$data['user']=$this->mdl_petugas->d_user()->result();
+ 	 	$this->load->view('muncul',$data);
+ 	 }
 
  }
 
