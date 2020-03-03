@@ -42,6 +42,10 @@
   {
     return $this->db->get('data_perusahaan');
   }
+  public function awal()
+  {
+    return $this->db->get('user');
+  }
  
 
 } 

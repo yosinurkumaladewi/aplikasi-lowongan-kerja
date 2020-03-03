@@ -1,8 +1,6 @@
 <?php 
-/**
-  * 
-  */
- class mdl_user extends CI_model
+
+ class mdl_petugas extends CI_Model
  {
  	 public function edit_data($data,$where)
   {
@@ -16,8 +14,8 @@
   {
     return $this->db->get('user');
   }
-  public function d_user()
-  {
-  	return $this->db->get('petugas');
-  }
+ // public function d_user()
+  //{
+  	//return $this->db->get('user');
+ // }
  } ?>

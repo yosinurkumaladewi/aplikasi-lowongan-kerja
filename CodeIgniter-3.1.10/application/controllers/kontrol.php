@@ -9,6 +9,8 @@
  	{
  		parent::__construct();
  		$this->load->model('mdl');
+ 		$this->load->model('mdl_petugas');
+ 		$this->load->model('mdl_perusahaan');
  	}
  	function index()
  	{
@@ -16,10 +18,11 @@
 
  		//$this->load->view('index');
  	}
- 	function awal()
- 	{
- 		$this->load->view('muncul');
- 	 	}
+ //	function awal()
+ 	//{
+ 	//	$data['user'] = $this->mdl->awal()->result();
+ 	//	$this->load->view('muncul',$data);
+ 	 //	}
 
  	 function register()
  	 {
@@ -85,7 +88,7 @@
  	 }
  	 public function edit()
  	 {
- 	 	$id_user = $this->input->post('id_user');
+ 	 	$id_user = $this->uri->segment(3);
  	 	$username = $this->input->post('username');
  	 	$level = $this->input->post('level');
  	 	$password = $this->input->post('password');
@@ -95,13 +98,13 @@
  	 		'username' => $username,
  	 		'level'=>$level,
  	 		'password'=>$password,
- 	 		'email' =>$email);
+ 	 		'email' =>$email
+ 	 	);
 
  	 	$where = array('id_user' => $id_user);
-
  	 	$this->mdl_petugas->edit_data($data,$where);
  	 	$this->session->set_flashdata('pesan','berhasil di edit');
- 	 	redirect(base_url('kontrol/data'));
+ 	 	redirect(base_url('index.php/kontrol/data'));
 
 
  	 }
@@ -111,11 +114,11 @@
  	 	$where = array('id_user'=>$id);
  	 	$this->mdl_petugas->hapus_data('user',$where);
  	 	$this->session->set_flashdata('pesan','berhasil di hapus');
- 	 	redirect(base_url('kontrol/data'));
+ 	 	redirect(base_url('index.php/kontrol/data'));
  	 }
  	 public function data()
  	 {
- 	 	$data['user']=$this->mdl_petugas->d_user()->result();
+ 	 	$data['user']=$this->mdl->awal()->result();
  	 	$this->load->view('muncul',$data);
  	 }
 

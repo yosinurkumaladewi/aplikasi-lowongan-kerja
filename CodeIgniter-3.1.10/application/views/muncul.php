@@ -23,23 +23,23 @@ include 'template/header.php';
  	</table> 
  	</div>
  	<?php 
- 	foreach ($admin as $key ) {
+ 	foreach ($user as $data ) {
  	 	 ?>
- 	 	 <div class="modal fade" id="edit<<?php $key->id_user; ?>">
+ 	 	 <div class="modal fade" id="edit<?php echo $data->id_user; ?>">
  	 	 	<div class="modal-dialog">
  	 	 		<div class="modal-content">
  	 	 			<div class="modal-header">
  	 	 				<h3>EDIT DATA</h3>
  	 	 			</div>
  	 	 			<div class="modal-body">
- 	 	 				<form method="POST" action="<?php echo base_url('kontrol/edit/'.$key->id_user); ?>">
+ 	 	 				<form method="POST" action="<?php echo base_url('index.php/kontrol/edit/'.$data->id_user); ?>">
  	 	 					<input class="id_edit" name="id_user" type="hidden">
  	 	 					<div class="form-group">
  	 	 						<div class="input-group input-group-alternative mb-3">
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-single-02"></i></span>
  	 	 							</div>
- 	 	 							<input  class="form-control id-username"  name="username" type="text" placeholder="username" value="<?=$key->username?>">
+ 	 	 							<input  class="form-control id-username"  name="username" type="text" placeholder="username" value="<?=$data->username?>">
  	 	 						</div>
  	 	 					</div>
  	 	 						<div class="form-group">
@@ -47,7 +47,7 @@ include 'template/header.php';
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-cart"></i></span>
  	 	 							</div>
- 	 	 							<select name="level" class="form-control id_level" value="<?=$key->level?>">
+ 	 	 							<select name="level" class="form-control id_level" value="<?=$data->level?>">
  	 	 								<option value="">--level--</option>
  	 	 								<option value="2">perusahan</option>
  	 	 								<option value="3">pelamar</option>
@@ -59,7 +59,7 @@ include 'template/header.php';
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
  	 	 							</div>
- 	 	 							<input type="password" name="password" placeholder="password" class="form-control" value="<?=$key->password?>">
+ 	 	 							<input type="password" name="password" placeholder="password" class="form-control" value="<?=$data->password?>">
  	 	 						</div>
  	 	 					</div>
  	 	 						<div class="form-group">
@@ -67,7 +67,7 @@ include 'template/header.php';
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-email-83"></i></span>
  	 	 							</div>
- 	 	 							<input  class="form-control id-email"  name="email" type="text" placeholder="email" value="<?=$key->email?>">
+ 	 	 							<input  class="form-control id-email"  name="email" type="text" placeholder="email" value="<?=$data->email?>">
  	 	 						</div>
  	 	 					</div>
  	 	 					<div class="modal-footer">
@@ -79,49 +79,50 @@ include 'template/header.php';
  	 	 		</div>
  	 	 	</div>
  	 	 </div>
- 	 	 <div class="modal fade" id="hapus <?php echo $key->id_user; ?>">
+ 	 	 <div class="modal fade" id="hapus<?php echo $data->id_user; ?>">
  	 	 	<div class="modal-dialog">
  	 	 		<div class="modal-content">
  	 	 			<div class="modal-header">
  	 	 				<h3>HAPUS DATA</h3>
  	 	 			</div>
- 	 	 			<form method="post" action="<?php echo base_url('kontrol/hapus/'.$key->id_user); ?>">
+ 	 	 			<div class="modal-body">
+ 	 	 			<form method="post" action="<?php echo base_url('index.php/kontrol/hapus/'.$data->id_user); ?>">
  	 	 				<div class="modal-body">
  	 	 					<input class="id_hapus" name="id_user" type="hidden">
- 	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $key->username; ?>">username</b></p>
+ 	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $data->username; ?>">username</b></p>
  	 	 				</div>
  	 	 				<div class="modal-footer">
  	 	 					<button class="btn btn-secondary" data-dismiss="modal">Batal</button>
  	 	 					<button class="btn btn-danger" type="submit">hapus</button>
  	 	 				</div>
  	 	 			</form>
+ 	 	 			</div>
  	 	 		</div>
  	 	 	</div>
  	 	 </div>
- 	 	 <div class="modal-fade" id="detail <?php echo $key->id_user; ?>">
+ 	 	 <div class="modal fade" id="detail<?php echo $data->id_user; ?>">
  	 	 	<div class="modal-dialog">
  	 	 		<div class="modal-content">
  	 	 			<div class="modal-header">
  	 	 				<h3>Detail</h3>
  	 	 			</div>
  	 	 			<div class="modal-body">
- 	 	 				<label>nama: <?=$key->username;?></label><br>
- 	 	 				<label>level: <?=$key->level;?></label><br>
- 	 	 				<label>password: <?=$key->password;?></label><br>
- 	 	 				<label>email: <?=$key->email;?></label><br>
+ 	 	 				<label>username: <?=$data->username;?></label><br>
+ 	 	 				<label>level: <?=$data->level;?></label><br>
+ 	 	 				<label>password: <?=$data->password;?></label><br>
+ 	 	 				<label>email: <?=$data->email;?></label><br>
  	 	 			</div>
  	 	 			<div class="modal-footer">
  	 	 				<button class="btn btn-secondary" data-dismiss="modal">Batal</button>
- 	 	 				<button class="btn btn-success" type="submit">kembali</button>
+ 	 	 				<button class="btn btn-success" data-dismiss="modal">kembali</button>
  	 	 			</div>
  	 	 		</div>
  	 	 	</div>
  	 	 </div>
            
-           <?php include 'template/footer.php'; ?>
-
-
- <script>
+           <?php } 
+           include 'template/footer.php'; ?>
+ <script type="text/javascript">
  	var save_method;
  	var table;
 
@@ -161,38 +162,37 @@ include 'template/header.php';
  				"targets":[ -1 ],
  				"orderable" : false
  			}]
- 			// ,
+ 			 ,
  			// "rowCallback" :  function(row,data,iDisplayIndex){
- 			// 	var info = this.fnPagingInfo();
- 			// 	var page = info.iPage;
- 			// 	var length = info.iLenght;
- 			// 	var index = page * length + (iDisplayIndex + 1);
- 			// 	$('td:eq(0)' , row).html(index);
- 			// }
+ 			 //	var info = this.fnPagingInfo();
+ 			 //	var page = info.iPage;
+ 			 	//var length = info.iLenght;
+ 			 //	var index = page * length + (iDisplayIndex + 1);
+ 			 	//$('td:eq(0)' , row).html(index);
+ 			 //}
  		});
- 		// table.columns().every(function(){
- 		// 	var table = this;
- 		// 	$('input' , this.header()).on('keyup change',function(){
- 		// 		if (table.search() !== this.value){
- 		// 			table.search(this.value).draw();
- 		// 		}
- 		// 	});
- 		// });
+ 		 table.columns().every(function(){
+ 		 	var table = this;
+ 		 	$('input' , this.header()).on('keyup change',function(){
+ 		 		if (table.search() !== this.value){
+ 		 			table.search(this.value).draw();
+ 		 		}
+ 		 	});
+ 		});
 
- 		 $('#tbl_user').on('click', '.edit_record',function(){
- 		 	var id_user = $(this).data('id_user');
- 		 location = '<?php echo base_url("index.php/kontrol/data"); ?>'+id_user;
- 		 });
- 		 $('#tbl_user').on('click', '.edit_record',function(){
- 		 	var id_user = $(this).data('id_user');
- 		 location = '<?php echo base_url("index.php/kontrol/edit"); ?>'+id_user;
- 		 });
- 		 $('#tbl_user').on('click','.delete_recird',function(){
- 		 	var id_user = $(this).data('id_user');
- 		 	var y = confirm('yakin hapus unit ini?');
- 		 if(y ==  true){location='<?php echo base_url("index.php/kontrol/hapus"); ?>'+id_user;}else{}
- 		 });
+ 		 // $('#tbl_user').on('click', '.edit_record',function(){
+ 		 // 	var id_user = $(this).data('id_user');
+ 		 // location = '<?php //echo base_url("index.php/kontrol/data"); ?>'+id_user;
+ 		 // });
+ 		 // $('#tbl_user').on('click', '.edit_record',function(){
+ 		 // 	var id_user = $(this).data('id_user');
+ 		 // location = '<?php //echo base_url("index.php/kontrol/edit"); ?>'+id_user;
+ 		 // });
+ 		 // $('#tbl_user').on('click','.delete_recird',function(){
+ 		 // 	var id_user = $(this).data('id_user');
+ 		 // 	var y = confirm('yakin hapus unit ini?');
+ 		 // if(y ==  true){location='<?php //echo base_url("index.php/kontrol/hapus"); ?>'+id_user;}else{}
+ 		 // });
 
  	});
-   </script>
- 
+ </script>
