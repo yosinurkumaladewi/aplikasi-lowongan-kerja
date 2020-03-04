@@ -24,8 +24,148 @@
  		</tbody>	
  	</table> 
  	</div>
+
+      <?php 
+ 	foreach ($data_pelamar as $data ) {
+ 	 	 ?>
+ 	 	 <div class="modal fade" id="edit<?php echo $data->id_pelamar; ?>">
+ 	 	 	<div class="modal-dialog">
+ 	 	 		<div class="modal-content">
+ 	 	 			<div class="modal-header">
+ 	 	 				<h3>EDIT DATA</h3>
+ 	 	 			</div>
+ 	 	 			<div class="modal-body">
+ 	 	 				<form method="POST" action="<?php echo base_url('index.php/kontrol_pelamar/edit/'.$data->id_pelamar); ?>">
+ 	 	 					<input class="id_edit" name="id_pelamar" type="hidden">
+ 	 	 					<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-single-02"></i></span>
+ 	 	 							</div>
+ 	 	 							<input  class="form-control"  name="nama" type="text" placeholder="nama" value="<?=$data->nama?>">
+ 	 	 						</div>
+ 	 	 					</div>
+ 	 	 						
+ 	 	 						<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+ 	 	 							</div>
+ 	 	 							<input type="text" name="alamat" placeholder="alamat" class="form-control" value="<?=$data->alamat?>">
+ 	 	 						</div>
+ 	 	 					</div>
+
+ 	 	 						<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+ 	 	 							</div>
+ 	 	 							<input type="text" name="jenis_kelamin" placeholder="jenis_kelamin" class="form-control" value="<?=$data->jenis_kelamin?>">
+ 	 	 						</div>
+ 	 	 					</div>
+
+ 	 	 						<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+ 	 	 							</div>
+ 	 	 							<input type="text" name="no_ktp" placeholder="no_ktp" class="form-control" value="<?=$data->no_ktp?>">
+ 	 	 						</div>
+ 	 	 					</div>
+ 	 	 					<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+ 	 	 							</div>
+ 	 	 							<input type="text" name="scan_ktp" placeholder="scan_ktp" class="form-control" value="<?=$data->scan_ktp?>">
+ 	 	 						</div>
+ 	 	 					</div>
+
+
+ 	 	 						<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+ 	 	 							</div>
+ 	 	 							<input type="date" name="tgl_lahir" placeholder="tgl_lahir" class="form-control" value="<?=$data->tgl_lahir?>">
+ 	 	 						</div>
+ 	 	 					</div>
+
+ 	 	 						<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-email-83"></i></span>
+ 	 	 							</div>
+ 	 	 							<input  class="form-control id-email"  name="email" type="text" placeholder="email" value="<?=$data->email?>">
+ 	 	 						</div>
+ 	 	 					</div>
+ 	 	 					<div class="form-group">
+ 	 	 						<div class="input-group input-group-alternative mb-3">
+ 	 	 							<div class="input-group-prepend">
+ 	 	 								<span class="input-group-text"><i class="ni ni-single-02"></i></span>
+ 	 	 							</div>
+ 	 	 							<input  class="form-control id-user"  name="id_user" type="text" placeholder="id_user" value="<?=$data->id_user?>">
+ 	 	 						</div>
+ 	 	 					</div>
+ 	 	 						
+ 	 	 					<div class="modal-footer">
+ 	 	 						<button class="btn btn-secondary" data-dismiss="modal">Batal</button>
+ 	 	 						<button class="btn btn-success" type="submit">edit</button>
+ 	 	 					</div>
+ 	 	 				</form>
+ 	 	 			</div>
+ 	 	 		</div>
+ 	 	 	</div>
+ 	 	 </div>
+ 	 	 <div class="modal fade" id="hapus<?php echo $data->id_perusahaan; ?>">
+ 	 	 	<div class="modal-dialog">
+ 	 	 		<div class="modal-content">
+ 	 	 			<div class="modal-header">
+ 	 	 				<h3>HAPUS DATA</h3>
+ 	 	 			</div>
+ 	 	 			<div class="modal-body">
+ 	 	 			<form method="post" action="<?php echo base_url('index.php/kontrol_perusahaan/hapus/'.$data->id_perusahaan); ?>">
+ 	 	 				<div class="modal-body">
+ 	 	 					<input class="id_hapus" name="id_perusahaan" type="hidden">
+ 	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $data->nama; ?>">nama</b></p>
+ 	 	 				</div>
+ 	 	 				<div class="modal-footer">
+ 	 	 					<button class="btn btn-secondary" data-dismiss="modal">Batal</button>
+ 	 	 					<button class="btn btn-danger" type="submit">hapus</button>
+ 	 	 				</div>
+ 	 	 			</form>
+ 	 	 			</div>
+ 	 	 		</div>
+ 	 	 	</div>
+ 	 	 </div>
+ 	 	 <div class="modal fade" id="detail<?php echo $data->id_perusahaan; ?>">
+ 	 	 	<div class="modal-dialog">
+ 	 	 		<div class="modal-content">
+ 	 	 			<div class="modal-header">
+ 	 	 				<h3>Detail</h3>
+ 	 	 			</div>
+ 	 	 			<div class="modal-body">
+ 	 	 				<label>nama: <?=$data->nama;?></label><br>
+ 	 	 				<label>alamat: <?=$data->alamat;?></label><br>
+ 	 	 				<label>jenis_lowongan: <?=$data->jenis_lowongan;?></label><br>
+ 	 	 				<label>no_hp: <?=$data->no_hp;?></label><br>
+ 	 	 				<label>tgl_lahir: <?=$data->tgl_lahir;?></label><br>
+ 	 	 				<label>email: <?=$data->email;?></label><br>
+ 	 	 				<label>profil: <?=$data->profil;?></label><br>
+ 	 	 				<label>id_user: <?=$data->id_user;?></label><br>
+
+
+ 	 	 			</div>
+ 	 	 			<div class="modal-footer">
+ 	 	 				<button class="btn btn-secondary" data-dismiss="modal">Batal</button>
+ 	 	 				<button class="btn btn-success" data-dismiss="modal">kembali</button>
+ 	 	 			</div>
+ 	 	 		</div>
+ 	 	 	</div>
+ 	 	 </div>
            
-           <?php include 'template/footer.php'; ?>
+           <?php } 
+           include 'template/footer.php'; ?>
 
 
  <script>

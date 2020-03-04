@@ -1,4 +1,4 @@
-<?php include 'template/header.php'; ?>
+ <?php include 'template/header.php'; ?>
 <div class="table-responsive">
  	<table class="table table-condensed table-hovered table-stiped table-bordered dt-responsive display nowrap" 
  	id="tbl_user" >
@@ -33,7 +33,7 @@
  	 	 				<h3>EDIT DATA</h3>
  	 	 			</div>
  	 	 			<div class="modal-body">
- 	 	 				<form method="POST" action="<?php echo base_url('index.php/kontrol_perusahaan/edit_perusahaan/'.$data->id_perusahaan); ?>">
+ 	 	 				<form method="POST" action="<?php echo base_url('index.php/kontrol_perusahaan/edit/'.$data->id_perusahaan); ?>">
  	 	 					<input class="id_edit" name="id_perusahaan" type="hidden">
  	 	 					<div class="form-group">
  	 	 						<div class="input-group input-group-alternative mb-3">
@@ -49,7 +49,7 @@
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
  	 	 							</div>
- 	 	 							<input type="alamat" name="alamat" placeholder="alamat" class="form-control" value="<?=$data->alamat?>">
+ 	 	 							<input type="text" name="alamat" placeholder="alamat" class="form-control" value="<?=$data->alamat?>">
  	 	 						</div>
  	 	 					</div>
 
@@ -58,7 +58,7 @@
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
  	 	 							</div>
- 	 	 							<input type="jenis_lowongan" name="jenis_lowongan" placeholder="jenis_lowongan" class="form-control" value="<?=$data->jenis_lowongan?>">
+ 	 	 							<input type="text" name="jenis_lowongan" placeholder="jenis_lowongan" class="form-control" value="<?=$data->jenis_lowongan?>">
  	 	 						</div>
  	 	 					</div>
 
@@ -67,7 +67,7 @@
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
  	 	 							</div>
- 	 	 							<input type="no_hp" name="no_hp" placeholder="no_hp" class="form-control" value="<?=$data->no_hp?>">
+ 	 	 							<input type="text" name="no_hp" placeholder="no_hp" class="form-control" value="<?=$data->no_hp?>">
  	 	 						</div>
  	 	 					</div>
 
@@ -76,7 +76,7 @@
  	 	 							<div class="input-group-prepend">
  	 	 								<span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
  	 	 							</div>
- 	 	 							<input type="tgl_lahir" name="tgl_lahir" placeholder="tgl_lahir" class="form-control" value="<?=$data->tgl_lahir?>">
+ 	 	 							<input type="date" name="tgl_lahir" placeholder="tgl_lahir" class="form-control" value="<?=$data->tgl_lahir?>">
  	 	 						</div>
  	 	 					</div>
 
@@ -113,7 +113,7 @@
  	 	 				<h3>HAPUS DATA</h3>
  	 	 			</div>
  	 	 			<div class="modal-body">
- 	 	 			<form method="post" action="<?php echo base_url('index.php/kontrol_perusahaan/hapus_perusahaan/'.$data->id_perusahaan); ?>">
+ 	 	 			<form method="post" action="<?php echo base_url('index.php/kontrol_perusahaan/hapus/'.$data->id_perusahaan); ?>">
  	 	 				<div class="modal-body">
  	 	 					<input class="id_hapus" name="id_perusahaan" type="hidden">
  	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $data->nama; ?>">nama</b></p>

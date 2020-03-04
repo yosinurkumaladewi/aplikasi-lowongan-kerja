@@ -166,12 +166,11 @@ class control extends CI_Controller
 				array('db'=>'id_pelamar','dt'=>7,
 					'formatter'=>function($d,$row){
 						return '<a href="javascript:void(0);"   class ="detail_record btn btn-success btn-xs btn-flat"
-						title="DETAIL" data-id_user="'.$d.'"  data-toggel="modal" data-target="#detail'.$d.'"><i class="fa fa-search"></i></a>
+						title="DETAIL" data-id_user="'.$d.'"  data-toggle="modal" data-target="#detail'.$d.'"><i class="fa fa-search"></i></a>
 							<a href="javascript:void(0);"  class="edit_record btn btn-warning btn-xs btn-flat"
-						title="EDIT" data-id_user="'.$d.'"   data-toggel="modal" data-target="#edit'.$d.'"><i class="fa fa-edit"></i></a>
-							<a href="javascript:void(0);"  data-toggel="modal" data-target="#hapus" class="edit_record btn btn-danger btn-xs btn-flat"
+						title="EDIT" data-id_user="'.$d.'"   data-toggle="modal" data-target="#edit'.$d.'"><i class="fa fa-edit"></i></a>
+								<a href="javascript:void(0);"  data-toggle="modal" data-target="#hapus'.$d.'" class="hapus_record btn btn-danger btn-xs btn-flat"
 							title="HAPUS" data-id_user="'.$d.'"><i class="fa fa-trash"></i></a>';
-
 
 					}
 				
@@ -226,10 +225,10 @@ class control extends CI_Controller
 				array('db'=>'id_perusahaan','dt'=>7,
 					'formatter'=>function($d,$row){
 						return '<a href="javascript:void(0);"   class ="detail_record btn btn-success btn-xs btn-flat"
-						title="DETAIL" data-id_user="'.$d.'"  data-toggel="modal" data-target="#detail'.$d.'"><i class="fa fa-search"></i></a>
+						title="DETAIL" data-id_user="'.$d.'"  data-toggle="modal" data-target="#detail'.$d.'"><i class="fa fa-search"></i></a>
 							<a href="javascript:void(0);"  class="edit_record btn btn-warning btn-xs btn-flat"
-						title="EDIT" data-id_user="'.$d.'"   data-toggel="modal" data-target="#edit'.$d.'"><i class="fa fa-edit"></i></a>
-							<a href="javascript:void(0);"  data-toggel="modal" data-target="#hapus" class="edit_record btn btn-danger btn-xs btn-flat"
+						title="EDIT" data-id_user="'.$d.'"   data-toggle="modal" data-target="#edit'.$d.'"><i class="fa fa-edit"></i></a>
+							<a href="javascript:void(0);"  data-toggle="modal" data-target="#hapus'.$d.'" class="hapus_record btn btn-danger btn-xs btn-flat"
 							title="HAPUS" data-id_user="'.$d.'"><i class="fa fa-trash"></i></a>';
 
 

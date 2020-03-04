@@ -4,8 +4,16 @@
   */
  class kontrol_perusahaan extends CI_controller
  {
+	function __construct()
+	{
+		parent::__construct();
+    	//$this->load->model('mdl');
+ 		//$this->load->model('mdl_petugas');
+ 		$this->load->model('mdl_perusahaan');
+		
+	}
  	
- 	public function edit_perusahaan()
+ 	public function edit()
  	{
 
  	 	$id_perusahaan= $this->uri->segment(3);
@@ -32,10 +40,10 @@
  	 	$where = array('id_perusahaan' => $id_perusahaan);
  	 	$this->mdl_perusahaan->edit_perusahaan($data,$where);
  	 	$this->session->set_flashdata('pesan','berhasil di edit');
- 	 	redirect(base_url('index.php/kontrol_perusahaan/data_perusahaan'));
+ 	 	redirect(base_url('index.php/kontrol_perusahaan/data'));
  
  	}
- 	 public function data_perusahaan()
+ 	 public function data()
  	 {
  	 	$data['data_perusahaan']=$this->mdl_perusahaan->awal()->result();
  	 	$this->load->view('data_perusahaan',$data);
@@ -46,7 +54,7 @@
  	 	$where = array('id_perusahaan'=>$id);
  	 	$this->mdl_perusahaan->hapus_perusahaan('data_perusahaan',$where);
  	 	$this->session->set_flashdata('pesan','berhasil di hapus');
- 	 	redirect(base_url('index.php/kontrol_perusahaan/data_perusahaan'));
+ 	 	redirect(base_url('index.php/kontrol_perusahaan/data'));
  	 }
 
  } ?>
