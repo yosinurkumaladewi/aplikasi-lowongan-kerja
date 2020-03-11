@@ -16,7 +16,7 @@
  	 	$id_pelamar= $this->uri->segment(3);
  	 	$nama = $this->input->post('nama');
  	 	$alamat = $this->input->post('alamat');
- 	 	$jenis_kelamin = $this->input->post('jenis_lowongan');
+ 	 	$jenis_kelamin = $this->input->post('jenis_kelamin');
  	 	$no_ktp = $this->input->post('no_ktp');
  	 	$scan_ktp =$this->input->post('scan_ktp');
  	 	$skck = $this->input->post('skck');
@@ -56,7 +56,7 @@
  	 {
  	 	$id =$this->uri->segment(3);
  	 	$where = array('id_pelamar'=>$id);
- 	 	$this->mdl_pelamar->hapus_pelamar('data_perusahaan',$where);
+ 	 	$this->mdl_pelamar->hapus_pelamar('data_pelamar',$where);
  	 	$this->session->set_flashdata('pesan','berhasil di hapus');
  	 	redirect(base_url('index.php/kontrol_pelamar/data'));
  	 }

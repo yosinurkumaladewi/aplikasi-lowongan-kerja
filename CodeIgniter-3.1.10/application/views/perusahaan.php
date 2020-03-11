@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>jOB.SI</title>
+<title>jOB.SI | Situs Lowongan Pencari Kerja</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link href="<?php  echo base_url('admin_template/'); ?>css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
-                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php  echo base_url('admin_template/'); ?> index.php">jasa pencarian lowongan kerja </a>
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="<?php  echo base_url('admin_template/'); ?> index.php">Dasboard perusahaan </a>
       <div class="nav-collapse">
         
         <ul class="nav pull-right">
@@ -59,7 +59,7 @@
         <li><a href=""><i class="icon-bar icon-search"></i><span>jenis lowongan</span> </a> </li>
         <li><a href=" "><i class="icon-bar icon-legal"></i><span>data Lowongan </span> </a></li>
         <li><a href=" "><i class="icon-bar icon-question-sign"></i><span>profi</span> </a> </li>
-        <li><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-question-sign"></i><span>contact</span> </a> </li>
+        <!--<li><a href="<?php echo base_url('index.php/control/contact') ?> "><i class="icon-bar icon-question-sign"></i><span>contact</span> </a> </li>-->
            
       </ul>
     </div>

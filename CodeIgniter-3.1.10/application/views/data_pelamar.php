@@ -117,17 +117,17 @@
  	 	 		</div>
  	 	 	</div>
  	 	 </div>
- 	 	 <div class="modal fade" id="hapus<?php echo $data->id_perusahaan; ?>">
+ 	 	 <div class="modal fade" id="hapus<?php echo $data->id_pelamar; ?>">
  	 	 	<div class="modal-dialog">
  	 	 		<div class="modal-content">
  	 	 			<div class="modal-header">
  	 	 				<h3>HAPUS DATA</h3>
  	 	 			</div>
  	 	 			<div class="modal-body">
- 	 	 			<form method="post" action="<?php echo base_url('index.php/kontrol_perusahaan/hapus/'.$data->id_perusahaan); ?>">
+ 	 	 			<form method="post" action="<?php echo base_url('index.php/kontrol_pelamar/hapus/'.$data->id_pelamar); ?>">
  	 	 				<div class="modal-body">
- 	 	 					<input class="id_hapus" name="id_perusahaan" type="hidden">
- 	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $data->nama; ?>">nama</b></p>
+ 	 	 					<input class="id_hapus" name="id_pelamar" type="hidden">
+ 	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $data->id_pelamar; ?>">nama</b></p>
  	 	 				</div>
  	 	 				<div class="modal-footer">
  	 	 					<button class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -138,7 +138,7 @@
  	 	 		</div>
  	 	 	</div>
  	 	 </div>
- 	 	 <div class="modal fade" id="detail<?php echo $data->id_perusahaan; ?>">
+ 	 	 <div class="modal fade" id="detail<?php echo $data->id_pelamar; ?>">
  	 	 	<div class="modal-dialog">
  	 	 		<div class="modal-content">
  	 	 			<div class="modal-header">
@@ -147,7 +147,7 @@
  	 	 			<div class="modal-body">
  	 	 				<label>nama: <?=$data->nama;?></label><br>
  	 	 				<label>alamat: <?=$data->alamat;?></label><br>
- 	 	 				<label>jenis_lowongan: <?=$data->jenis_lowongan;?></label><br>
+ 	 	 				<label>jenis_kelamin: <?=$data->jenis_kelamin;?></label><br>
  	 	 				<label>no_hp: <?=$data->no_hp;?></label><br>
  	 	 				<label>tgl_lahir: <?=$data->tgl_lahir;?></label><br>
  	 	 				<label>email: <?=$data->email;?></label><br>
@@ -209,13 +209,13 @@
  				"orderable" : false
  			}]
  			 ,
- 			 "rowCallback" :  function(row,data,iDisplayIndex){
- 			 	var info = this.fnPagingInfo();
- 			 	var page = info.iPage;
- 			 	var length = info.iLenght;
- 			 	var index = page * length + (iDisplayIndex + 1);
- 			 	$('td:eq(0)' , row).html(index);
- 			 }
+ 			// "rowCallback" :  function(row,data,iDisplayIndex){
+ 			 //	var info = this.fnPagingInfo();
+ 			 //	var page = info.iPage;
+ 			 	//var length = info.iLenght;
+ 			 	//var index = page * length + (iDisplayIndex + 1);
+ 			 	//$('td:eq(0)' , row).html(index);
+ 			 //}
  		});
  		 table.columns().every(function(){
  		 	var table = this;

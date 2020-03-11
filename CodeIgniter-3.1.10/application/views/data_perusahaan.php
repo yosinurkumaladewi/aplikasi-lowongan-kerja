@@ -116,7 +116,7 @@
  	 	 			<form method="post" action="<?php echo base_url('index.php/kontrol_perusahaan/hapus/'.$data->id_perusahaan); ?>">
  	 	 				<div class="modal-body">
  	 	 					<input class="id_hapus" name="id_perusahaan" type="hidden">
- 	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $data->nama; ?>">nama</b></p>
+ 	 	 					<p>anda yakin akan menghapus data <b value="<?php echo $data->id_perusahaan; ?>">nama</b></p>
  	 	 				</div>
  	 	 				<div class="modal-footer">
  	 	 					<button class="btn btn-secondary" data-dismiss="modal">Batal</button>

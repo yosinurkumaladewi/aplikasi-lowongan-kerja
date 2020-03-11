@@ -11,6 +11,7 @@ class control extends CI_Controller
     	$this->load->model('mdl');
  		$this->load->model('mdl_petugas');
  		$this->load->model('mdl_perusahaan');
+ 		$this->load->model('mdl_pelamar');
 		
 	}
 	function index()
@@ -127,10 +128,7 @@ class control extends CI_Controller
 			$data['user']=$this->mdl->pelamar()->result();
 			$this->load->view('muncul',$data);
 		}
-		function contact()
-		{
-			$this->load->view('kontak');
-		}
+		
 		public function ssp_pelamar()
 		{
 			$sql_details = $this->mdl->get_sql_details();
@@ -187,8 +185,8 @@ class control extends CI_Controller
 		}
 		function plmar()
 		{
-			//$data['data_pelamar']=$this->mdl->get_data_pelamar()->result()
-			$this->load->view('data_pelamar');
+			$data['data_pelamar']=$this->mdl_pelamar->awal()->result();
+			$this->load->view('data_pelamar',$data);
 		}
 		public function ssp_perusahaan()
 		{
