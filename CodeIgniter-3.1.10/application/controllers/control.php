@@ -42,12 +42,20 @@ class control extends CI_Controller
 						 redirect(base_url('index.php/control/lamar'));
 					}
 				}else{
-					echo "password salah";
+					$this->session->set_flashdata(array(
+						'pesan' => 'password salah',
+						'type' => 'danger',
+					));
+					redirect(base_url('index.php/kontrol/login'));
 				}
 				}
 
 			}else{
-				echo "username salah";
+				$this->session->set_flashdata(array(
+						'pesan' => 'username salah',
+						'type' => 'danger',
+					));
+					redirect(base_url('index.php/kontrol/login'));
 			}
 			
 		}

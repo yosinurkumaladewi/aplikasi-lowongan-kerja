@@ -73,6 +73,14 @@
 			<div class="login-fields">
 				
 				<p>Tolong Registrasi Terlebih Dahulu Sebelum Login.</p>
+				<?php 
+				$pesan = $this->session->flashdata('pesan');
+				$type = $this->session->flashdata('type');
+				if ($pesan) {
+					echo '<div class="alert alert-'.$type.'">'.$pesan.'
+					<button class="close" data-dismiss="alert">x</button></div>';
+				}
+				 ?>
 				
 				<div class="field">
 					<label for="username">Username</label>

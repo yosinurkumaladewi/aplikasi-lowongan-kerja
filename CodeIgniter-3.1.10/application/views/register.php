@@ -80,6 +80,9 @@
       <div class="login-fields">
         
         <p>Tolong Isi Data Registrasi Anda Untuk Login</p>
+        <?php //validation_errors(); ?>
+        <?php //form_open('regiter'); ?>
+        
         
         
         <div class="field">

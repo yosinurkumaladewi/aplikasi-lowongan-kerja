@@ -41,18 +41,19 @@
  	 	$username=$this->input->post('username');
  	 	$email=$this->input->post('email');
  	 	$password=md5($this->input->post('password'));
+ 	 	$validasi_password=md5($this->input->post('confirm_password'));
  	 	$level=$this->input->post('level');
 
-
-
-
- 	 	$data_user = array('id_user' =>$id ,'username'=>$username, 'level' => $level,'email'=>$email,'password'=>$password	);
- 	 	//echo $id,$username,$email,$password;
- 	 	$this->mdl->register($data_user);
- 	 	
- 	 	$this->send_email($konfirmasi,$email);
- 	 	redirect(base_url('index.php/kontrol/'));
-
+ 	 	if ($password == $validasi_password) {
+ 	 		$data_user = array('id_user' =>$id ,'username'=>$username, 'level' => $level,'email'=>$email,'password'=>$password,'password'=>$validasi_password);
+	 	 	//echo $id,$username,$email,$password;
+	 	 	$this->mdl->register($data_user);
+	 	 	
+	 	 	$this->send_email($konfirmasi,$email);
+	 	 	redirect(base_url('index.php/kontrol/'));
+ 	 	}else{
+ 	 		echo "Password tidak sama";
+ 	 	}
 
  	 }
  	 public function send_email()
