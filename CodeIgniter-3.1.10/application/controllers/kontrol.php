@@ -45,14 +45,19 @@
  	 	$level=$this->input->post('level');
 
  	 	if ($password == $validasi_password) {
- 	 		$data_user = array('id_user' =>$id ,'username'=>$username, 'level' => $level,'email'=>$email,'password'=>$password,'password'=>$validasi_password);
+ 	 		$data_user = array('id_user' =>$id ,'username'=>$username, 'level' => $level,'email'=>$email,'password'=>$password,'password'=>$password);
 	 	 	//echo $id,$username,$email,$password;
 	 	 	$this->mdl->register($data_user);
 	 	 	
 	 	 	$this->send_email($konfirmasi,$email);
 	 	 	redirect(base_url('index.php/kontrol/'));
  	 	}else{
- 	 		echo "Password tidak sama";
+ 	 		$this->session->set_flashdata(array(
+						'pesan' => 'password salah',
+						'type' => 'danger'
+					));
+					redirect(base_url('index.php/kontrol/register'));
+ 	 		
  	 	}
 
  	 }

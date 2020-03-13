@@ -80,11 +80,16 @@
       <div class="login-fields">
         
         <p>Tolong Isi Data Registrasi Anda Untuk Login</p>
-        <?php //validation_errors(); ?>
-        <?php //form_open('regiter'); ?>
+       <?php 
+        $pesan = $this->session->flashdata('pesan');
+        $type = $this->session->flashdata('type');
+        if ($pesan) {
+          echo '<div class="alert alert-'.$type.'">'.$pesan.'
+          <button class="close" data-dismiss="alert">x</button></div>';
+        }
+         ?>
         
-        
-        
+        <input type="hidden" name="id_user">
         <div class="field">
           <label for="lastname">username:</label>  
           <input type="text" id="username" name="username"  placeholder="username" class="register username"  />
