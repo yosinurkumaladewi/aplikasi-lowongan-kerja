@@ -5,59 +5,54 @@
 class control extends CI_Controller
 {
 	
-	function __construct()
-	{
-		parent::__construct();
-    	$this->load->model('mdl');
- 		$this->load->model('mdl_petugas');
- 		$this->load->model('mdl_perusahaan');
- 		$this->load->model('mdl_pelamar');
-		
-	}
-	function index()
-	{
-		//$this->load->view('login');
-		$data['user']=$this->mdl->pelamar()->result();
-		$this->load->view('muncul',$data);
-
-	 }
-	 function login()
-	 {
-		$username = $this->input->post('username');
-		$password= $this->input->post('password');
-		$data = array('username'=>$username);
-
-		$log=$this->mdl->cek_login($data);
-		if ($log->num_rows(0))
-
+		function __construct()
 		{
-			foreach ($log->result_array() as $data ) {
-				$this->session->set_userdata($data);
-				if(md5($password)==$data['password']){
-					if($data['level']=='1'){
-						redirect(base_url('index.php/control/user/'));
-					}else if($data['level']=='2'){
-					 redirect(base_url('index.php/control/perusahaan_control'));
-					}else{
-						 redirect(base_url('index.php/control/lamar'));
-					}
-				}else{
-					$this->session->set_flashdata(array(
-						'pesan' => 'password salah',
-						'type' => 'danger',
-					));
-					redirect(base_url('index.php/kontrol/login'));
-				}
-				}
+			parent::__construct();
+	    	$this->load->model('mdl');
+	 		$this->load->model('mdl_petugas');
+	 		$this->load->model('mdl_perusahaan');
+	 		$this->load->model('mdl_pelamar');
+		}
+		function index()
+		{
+			//$this->load->view('login');
+			$data['user']=$this->mdl->pelamar()->result();
+			$this->load->view('muncul',$data);
+		}
+		public function login()
+		{
+			$username = $this->input->post('username');
+			$password= $this->input->post('password');
+			$data = array('username'=>$username);
 
+			$log=$this->mdl->cek_login($data);
+			if ($log->num_rows(0))
+			{
+				foreach ($log->result_array() as $data ) {
+					$this->session->set_userdata($data);
+					if(md5($password)==$data['password']){
+						if($data['level']=='1'){
+							redirect(base_url('index.php/control/user/'));
+						}else if($data['level']=='2'){
+						 redirect(base_url('index.php/control/home_perusahaan'));
+						}else{
+							redirect(base_url('index.php/control/home_lamar'));
+						}
+					}else{
+						$this->session->set_flashdata(array(
+							'pesan' => 'password salah',
+							'type' => 'danger',
+						));
+						redirect(base_url('index.php/kontrol/login'));
+					}
+				}
 			}else{
 				$this->session->set_flashdata(array(
-						'pesan' => 'username salah',
-						'type' => 'danger',
-					));
-					redirect(base_url('index.php/kontrol/login'));
+					'pesan' => 'username salah',
+					'type' => 'danger',
+				));
+				redirect(base_url('index.php/kontrol/login'));
 			}
-			
 		}
 		public function user()
 		{
@@ -65,17 +60,49 @@ class control extends CI_Controller
 			$this->load->view('muncul',$data);
 		
 		}
-		public function lamar()
+		public function home_lamar()
 		{
-			$data['user']=$this->mdl->pelamar()->result();
-			$this->load->view('pelamar',$data);
+			$this->load->view('home_lamar');
 		}
 
-		public function perusahaan_control()
-
+		public function lowongan_lamar()
 		{
-			$data['user']=$this->mdl->pelamar()->result();
-			$this->load->view('perusahaan',$data);
+			// Konten setiap lowongan (bukan CRUD)
+			$this->load->view('lowongan_lamar');
+		}
+
+		public function profil_lamar()
+		{
+			// Detail Profil Pelamar yang login
+			// Bisa diedit
+			$this->load->view('profil_lamar');
+		}
+
+		public function home_perusahaan()
+		{
+			// Total Lowongan yang dipunyai
+			// Total Lamaran yang masuk
+			// Total Lamaran yang masuk per hari ini
+			$this->load->view('home_perusahaan');
+		}
+
+		public function lowongan_perusahaan()
+		{
+			// CRUD Lowongan yang dimiliki perusahaan tersebut
+			$this->load->view('lowongan_perusahaan');
+		}
+
+		public function lamaran_perusahaan()
+		{
+			// CRUD Lamaran Masuk ke lowongan yang dimiliki perusahaan tersebut
+			$this->load->view('lamaran_perusahaan');
+		}
+
+		public function profil_perusahaan()
+		{
+			// Detail Profil Perusahaan Yang Login
+			// Bisa diedit
+			$this->load->view('profil_perusahaan');
 		}
 
 		public function ssp_unit()
@@ -86,26 +113,10 @@ class control extends CI_Controller
 			$primarykey = 'id_user';
 			$columns = array(
 				array ('db'=>'id_user','dt'=>0),
-			     array ('db'=>'username','dt'=>1,
-					//'formatter'=> function($d,$row){
-						//if($d == "1"){
-							//return "<small class ='label bg-green'>AVAILABLE</small>";
-							//}//elseif ($d == "0"){
-								//return "<small class ='label bg-green'>NONAVAILABLE</small>";
-							//}//else{
-								//return "<small class='label'>LAINNYA</small>";
-							// }
-					//}
-
-			),
+			    array ('db'=>'username','dt'=>1),
 				array( 'db'=>'level','dt'=>2),
 				array( 'db'=>'password','dt'=>3),
-				array( 'db'=>'email','dt'=>4,
-				//'formatter'=>function($d,$row){
-					//return date('d-m-y ] H:i:s',strtotime($d0);}
-				 
-
-				 ),
+				array( 'db'=>'email','dt'=>4),
 				array('db'=>'id_user','dt'=>5,
 					'formatter'=>function($d,$row){
 						return '<a href="javascript:void(0);"   class ="detail_record btn btn-success btn-xs btn-flat"
@@ -114,15 +125,7 @@ class control extends CI_Controller
 						title="EDIT" data-id_user="'.$d.'"   data-toggle="modal" data-target="#edit'.$d.'"><i class="fa fa-edit"></i></a>
 							<a href="javascript:void(0);"  data-toggle="modal" data-target="#hapus'.$d.'" class="hapus_record btn btn-danger btn-xs btn-flat"
 							title="HAPUS" data-id_user="'.$d.'"><i class="fa fa-trash"></i></a>';
-
-
-					}
-				
-
-			)
-
-
-
+					})
 			);
 			require 'DataTables/ssp.class.php';
 			echo json_encode(
@@ -132,7 +135,6 @@ class control extends CI_Controller
 
 		public function home()
 		{
-
 			$data['user']=$this->mdl->pelamar()->result();
 			$this->load->view('muncul',$data);
 		}
@@ -145,30 +147,12 @@ class control extends CI_Controller
 			$primarykey = 'id_pelamar';
 			$columns = array(
 				array ('db'=>'id_pelamar','dt'=>0),
-				array ('db'=>'nama','dt'=>1,
-					//'formatter'=> function($d,$row){
-						//if($d == "1"){
-							//return "<small class ='label bg-green'>AVAILABLE</small>";
-							//}//elseif ($d == "0"){
-								//return "<small class ='label bg-green'>NONAVAILABLE</small>";
-							//}//else{
-								//return "<small class='label'>LAINNYA</small>";
-							//}
-					//}
-
-			),
+				array ('db'=>'nama','dt'=>1),
 				array( 'db'=>'alamat','dt'=>2),
 				array( 'db'=>'jenis_kelamin','dt'=>3),
-				
 				array( 'db'=>'id_user','dt'=>4),
 				array( 'db'=>'email','dt'=>5),
 				array( 'db'=>'no_hp','dt'=>6),
-				
-				//'formatter'=>function($d,$row){
-					//return date('d-m-y ] H:i:s',strtotime($d));
-				 
-
-				 
 				array('db'=>'id_pelamar','dt'=>7,
 					'formatter'=>function($d,$row){
 						return '<a href="javascript:void(0);"   class ="detail_record btn btn-success btn-xs btn-flat"
@@ -177,14 +161,7 @@ class control extends CI_Controller
 						title="EDIT" data-id_user="'.$d.'"   data-toggle="modal" data-target="#edit'.$d.'"><i class="fa fa-edit"></i></a>
 								<a href="javascript:void(0);"  data-toggle="modal" data-target="#hapus'.$d.'" class="hapus_record btn btn-danger btn-xs btn-flat"
 							title="HAPUS" data-id_user="'.$d.'"><i class="fa fa-trash"></i></a>';
-
-					}
-				
-
-			)
-
-
-
+					})
 			);
 			require 'DataTables/ssp.class.php';
 			echo json_encode(
@@ -204,30 +181,12 @@ class control extends CI_Controller
 			$primarykey = 'id_perusahaan';
 			$columns = array(
 				array ('db'=>'id_perusahaan','dt'=>0),
-				array ('db'=>'nama','dt'=>1,
-					//'formatter'=> function($d,$row){
-						//if($d == "1"){
-							//return "<small class ='label bg-green'>AVAILABLE</small>";
-							//}//elseif ($d == "0"){
-								//return "<small class ='label bg-green'>NONAVAILABLE</small>";
-							//}//else{
-								//return "<small class='label'>LAINNYA</small>";
-							//}
-					//}
-
-			),
+				array ('db'=>'nama','dt'=>1),
 				array( 'db'=>'alamat','dt'=>2),
 				array( 'db'=>'jenis_lowongan','dt'=>3),
 				array( 'db'=>'no_hp','dt'=>4),
-			
 				array( 'db'=>'email','dt'=>5),
-			
 				array( 'db'=>'id_user','dt'=>6),
-				//'formatter'=>function($d,$row){
-					//return date('d-m-y ] H:i:s',strtotime($d));
-				 
-
-			
 				array('db'=>'id_perusahaan','dt'=>7,
 					'formatter'=>function($d,$row){
 						return '<a href="javascript:void(0);"   class ="detail_record btn btn-success btn-xs btn-flat"
@@ -236,15 +195,7 @@ class control extends CI_Controller
 						title="EDIT" data-id_user="'.$d.'"   data-toggle="modal" data-target="#edit'.$d.'"><i class="fa fa-edit"></i></a>
 							<a href="javascript:void(0);"  data-toggle="modal" data-target="#hapus'.$d.'" class="hapus_record btn btn-danger btn-xs btn-flat"
 							title="HAPUS" data-id_user="'.$d.'"><i class="fa fa-trash"></i></a>';
-
-
-					}
-				
-
-			)
-
-
-
+					})
 			);
 			require 'DataTables/ssp.class.php';
 			echo json_encode(
@@ -257,7 +208,14 @@ class control extends CI_Controller
 			$this->load->view('data_perusahaan',$data);
 		}
 
+		public function jenis_lowongan()
+		{
+			$this->load->view('jenis_lowongan');
+		}
+
+		public function profil_admin()
+		{
+			$this->load->view('profil_admin');
+		}
 }
-
-
- ?>
+?>

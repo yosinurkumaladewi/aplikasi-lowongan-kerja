@@ -18,11 +18,11 @@
 
  		//$this->load->view('index');
  	}
- //	function awal()
- 	//{
- 	//	$data['user'] = $this->mdl->awal()->result();
- 	//	$this->load->view('muncul',$data);
- 	 //	}
+
+ 	public function logout()
+ 	{
+ 		$this->load->view('login');
+ 	}
 
  	 function register()
  	 {
@@ -53,7 +53,7 @@
 	 	 	redirect(base_url('index.php/kontrol/'));
  	 	}else{
  	 		$this->session->set_flashdata(array(
-						'pesan' => 'password salah',
+						'pesan' => 'Password Yang Anda Masukkan Tidak Valid',
 						'type' => 'danger'
 					));
 					redirect(base_url('index.php/kontrol/register'));

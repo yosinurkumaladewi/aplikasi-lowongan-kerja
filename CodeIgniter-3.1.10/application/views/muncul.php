@@ -2,26 +2,30 @@
 <?php 
 include 'template/header.php';
  ?>
- 	<div class="table-responsive">
- 
-    					
- 	<table class="table table-condensed table-hovered table-stiped table-bordered dt-responsive display nowrap" 
- 	id="tbl_user" >
- 		<thead>
- 			<tr>
- 				<th>#</th>
- 				<th>username <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>level<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>password <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>email <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
- 				<th>aksi <br></th>
- 			</tr>
- 		</thead>
- 		<tbody id="show_data">
- 			
- 		</tbody>	
- 	</table> 
- 	</div>
+ 	<section class="container">
+ 		<div class="row">
+	 		<div class="box">
+	 			<div class="table-responsive">   					
+				 	<table class="table table-condensed table-hovered table-stiped table-bordered" 
+				 	id="tbl_user" >
+				 		<thead>
+				 			<tr>
+				 				<th>#</th>
+				 				<th>username <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+				 				<th>level<br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+				 				<th>password <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+				 				<th>email <br><input type="text" class="form-control input-sm" placeholder="SEARCH" ></th>
+				 				<th>aksi <br></th>
+				 			</tr>
+				 		</thead>
+				 		<tbody id="show_data">
+				 			
+				 		</tbody>
+				 	</table>
+			 	</div>
+	 		</div>
+	 	</div>
+ 	</section>
  	<?php 
  	foreach ($user as $data ) {
  	 	 ?>
@@ -131,11 +135,11 @@ include 'template/header.php';
  		 	return{
  		 		"iStart"			:oSettings._iDisplayStart,
  		 		"iEnd"			    :oSettings.fnDisplayEnd(),
- 		 		"iLenght"			:oSettings._iDisplayLenght,
+ 		 		"iLength"			:oSettings._iDisplayLength,
  		 		"iTotal"			:oSettings.fnRecordsTotal(),
  		 		"iFilteredTotal"	:oSettings.fnRecordsDisplay(),
- 		 		"iPage"				:Math.ceil(oSettings._iDisplayStart/oSettings._iDisplayLenght),
- 		 		"iTotalPages"		:Math.ceil(oSettings.fnRecordsDisplay()/oSettings._iDisplayLenght)
+ 		 		"iPage"				:Math.ceil(oSettings._iDisplayStart/oSettings._iDisplayLength),
+ 		 		"iTotalPages"		:Math.ceil(oSettings.fnRecordsDisplay()/oSettings._iDisplayLength)
  		 	}
  		 };
  		table = $('#tbl_user').DataTable({
@@ -143,12 +147,12 @@ include 'template/header.php';
  			"serverSide" : true,
  			"searching"  : true,
  			"pagingType" : 'full_numbers',
- 			"dom"        : 'Bfrtip',
- 			 "Buttons"    : [
- 			 {"extend" : 'excel' , "className" : 'btn btn-success btn-flat'},
- 			 {"extend" : 'pdf' , "className" : 'btn btn-danger  btn btn-flat'},
- 			 {"extend" :'pageLenght' , "className" : 'btn btn-default btn-flat'}
- 			 ],
+ 			// "dom"        : 'Bfrtip',
+ 			 // "Buttons"    : [
+ 			 // {"extend" : 'excel' , "className" : 'btn btn-success btn-flat'},
+ 			 // {"extend" : 'pdf' , "className" : 'btn btn-danger  btn btn-flat'},
+ 			 // {"extend" :'pageLenght' , "className" : 'btn btn-default btn-flat'}
+ 			 // ],
  			"lengthMenu" : [
  				[100,150,200,300,-1],
  				['100 Rows','150 Rows','200 Rows','300 Rows','All']
@@ -162,16 +166,16 @@ include 'template/header.php';
  				"targets":[ -1 ],
  				"orderable" : false
  			}]
- 			 ,
  			// "rowCallback" :  function(row,data,iDisplayIndex){
- 			 //	var info = this.fnPagingInfo();
- 			 //	var page = info.iPage;
- 			 	//var length = info.iLenght;
- 			 //	var index = page * length + (iDisplayIndex + 1);
- 			 	//$('td:eq(0)' , row).html(index);
- 			 //}
+ 			//  	var info = this.fnPagingInfo();
+ 			//  	var page = info.iPage;
+ 			//  	var length = info.iLenght;
+ 			//  	var index = page * length + (iDisplayIndex + 1);
+ 			//  	$('td:eq(0)' , row).html(index);
+ 			//  }
  		});
- 		 table.columns().every(function(){
+
+ 		table.columns().every(function(){
  		 	var table = this;
  		 	$('input' , this.header()).on('keyup change',function(){
  		 		if (table.search() !== this.value){

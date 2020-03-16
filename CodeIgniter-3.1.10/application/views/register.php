@@ -37,10 +37,7 @@
         <div class="content clearfix"></div>
 
     
-        <a class="brand">
-      REGISTER jOB.SI        
-      </a>        
-          
+ 
       
       <!--<div class="nav-collapse">
         <ul class="nav pull-right">
@@ -75,11 +72,7 @@
     
     <form action="<?php echo base_url('index.php/kontrol/reg') ?>" method="post">
     
-      <h1>REGISTRASI</h1>      
-      
-      <div class="login-fields">
-        
-        <p>Tolong Isi Data Registrasi Anda Untuk Login</p>
+      <h1>REGISTRASI</h1>   
        <?php 
         $pesan = $this->session->flashdata('pesan');
         $type = $this->session->flashdata('type');
@@ -87,7 +80,12 @@
           echo '<div class="alert alert-'.$type.'">'.$pesan.'
           <button class="close" data-dismiss="alert">x</button></div>';
         }
-         ?>
+         ?>   
+      
+      <div class="login-fields">
+        
+        <p>Tolong Isi Data Registrasi Anda Untuk Login</p>
+      
         
         <input type="hidden" name="id_user">
         <div class="field">
@@ -123,10 +121,10 @@
       
       <div class="login-actions">
         
-        <span class="login-checkbox">
+        <!--<span class="login-checkbox">
           <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
           <label class="choice" for="Field">Agree with the Terms & Conditions.</label>
-        </span>
+        </span>-->
                   
         <button class="button btn btn-primary btn-large" type="submit">Register</button>
         
